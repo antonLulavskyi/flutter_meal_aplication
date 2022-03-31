@@ -8,7 +8,7 @@ class Category {
   const Category({required this.id, required this.title, required this.color});
 }
 
-List<Category> CATEGORIES_DATA = const [
+const List<Category> kCategoriesData = [
   Category(id: 'a1', title: 'Polish', color: Colors.red),
   Category(id: 'a1', title: 'Italian', color: Colors.green),
   Category(id: 'a1', title: 'American', color: Colors.blue),

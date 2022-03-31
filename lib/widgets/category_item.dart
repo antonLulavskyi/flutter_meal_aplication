@@ -10,15 +10,16 @@ class CategoryItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextTheme textTheme = Theme.of(context).textTheme;
     return Container(
       //height: 200,
       padding: const EdgeInsets.all(16),
-      child: Text(title),
+      child: Text(title, style: textTheme.headlineLarge,),
       decoration: BoxDecoration(
         gradient: LinearGradient(colors: [
           backgroundColor.withOpacity(0.5), // from color
           backgroundColor // to color
-        ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+        ], begin: Alignment.bottomCenter, end: Alignment.topCenter),
         borderRadius: BorderRadius.circular(16),
       ),
       

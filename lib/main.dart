@@ -12,12 +12,36 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Meals App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(
+          brightness: Brightness.dark,
+          seedColor: Colors.black,
+          primary: Colors.black,
+          secondary: Colors.black,
+          onSecondary: Colors.white,
+          onPrimary: Colors.white,
+        ),
+        textTheme: const TextTheme(
+          displayLarge: TextStyle(
+              fontFamily: 'Lato',
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w900,
+              color: Colors.white),
+          titleLarge: TextStyle(
+              fontFamily: 'Lato',
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w400,
+              color: Colors.white),
+          headlineLarge: TextStyle(
+              fontFamily: 'Lato',
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w700,
+              color: Colors.white),
+        ),
       ),
-      home: CategoriesScreen(),
+      home: const CategoriesScreen(),
     );
   }
 }
-

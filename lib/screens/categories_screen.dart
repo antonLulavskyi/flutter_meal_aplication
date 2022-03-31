@@ -3,27 +3,30 @@ import 'package:flutter_meal_aplication/models/category_model.dart';
 import 'package:flutter_meal_aplication/widgets/category_item.dart';
 
 class CategoriesScreen extends StatelessWidget {
-  CategoriesScreen({Key? key}) : super(key: key);
+  const CategoriesScreen({Key? key}) : super(key: key);
 
   // List of Categories
-  final categories = CATEGORIES_DATA;
+  final categories = kCategoriesData;
 
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
+    TextTheme textTheme = Theme.of(context).textTheme;
+
     return Scaffold(
-      appBar: AppBar(title: const Text('Meals App')),
+      appBar: AppBar(title: Text('Categories', style: textTheme.titleLarge),),
       body: Center(
-        child: SizedBox(
-          width: screenSize.width * 0.8,
-          height: screenSize.height * 0.8,
+        child: Container(
+          margin: const EdgeInsets.only(top: 20),
+          width: screenSize.width * 0.9,
+          height: screenSize.height,
           child: GridView.builder(
             gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-              maxCrossAxisExtent: 400,
+              maxCrossAxisExtent: 500, // width
+              mainAxisExtent: 200, // height
               childAspectRatio: 2/3,
               crossAxisSpacing: 20,
               mainAxisSpacing: 20,
-              mainAxisExtent: 400,
             ),
             itemCount: categories.length,
             itemBuilder: (context, index) {
@@ -32,6 +35,7 @@ class CategoriesScreen extends StatelessWidget {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(onPressed: () {}, child: const Text('+'),),
     );
   }
 }

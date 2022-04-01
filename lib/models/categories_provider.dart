@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'category_model.dart';
 import 'dart:math';
 
@@ -20,6 +19,11 @@ class Categories with ChangeNotifier {
 
    var newCategory = Category(id: randomId, title: title, color: randomColor);
    _kCategoriesData.add(newCategory);
+   notifyListeners();
+ }
+
+ void deleteCategory(int withIndex) {
+   _kCategoriesData.removeAt(withIndex);
    notifyListeners();
  }
 

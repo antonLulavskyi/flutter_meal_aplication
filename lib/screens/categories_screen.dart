@@ -4,22 +4,24 @@ import 'package:provider/provider.dart';
 
 import '../models/categories_provider.dart';
 
-
-
 class CategoriesScreen extends StatelessWidget {
+  static const routeName = '/categories';
   const CategoriesScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
     Size screenSize = MediaQuery.of(context).size;
     TextTheme textTheme = Theme.of(context).textTheme;
+
+    print(screenSize.width);
 
     final categoriesData = Provider.of<Categories>(context).categoriesData;
     final data = Provider.of<Categories>(context);
 
     return Scaffold(
-      appBar: AppBar(title: Text('Categories', style: textTheme.titleLarge),),
+      appBar: AppBar(
+        title: Text('Categories', style: textTheme.titleLarge),
+      ),
       body: Center(
         child: Container(
           margin: const EdgeInsets.only(top: 20),
@@ -29,7 +31,7 @@ class CategoriesScreen extends StatelessWidget {
             gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
               maxCrossAxisExtent: 500, // width
               mainAxisExtent: 200, // height
-              childAspectRatio: 2/3,
+              childAspectRatio: 2 / 3,
               crossAxisSpacing: 20,
               mainAxisSpacing: 20,
             ),
@@ -40,9 +42,12 @@ class CategoriesScreen extends StatelessWidget {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(onPressed: () {
-        data.addNewCategory('New Category');
-      }, child: const Text('+'),),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          data.addNewCategory('New Category');
+        },
+        child: const Text('+'),
+      ),
     );
   }
 }

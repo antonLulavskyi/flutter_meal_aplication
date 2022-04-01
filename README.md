@@ -10,14 +10,15 @@ Navigation: Categories screen:
     - Importing and registering custom fonts. DONE
     - Reorganise data structure using Provider package. DONE
     - Add floating action button to the Categoties screen, which would trigger addNewCategory method and creates a new category. DONE
-    - Add a delete iconButton, and add a deleteItem(withId) function to the categories_provider class. DONE.
+    - Adding a delete iconButton, and adding a deleteItem(withId) function to the categories_provider class. DONE.
 
     
 Navigation: CategorieMealScreen screen:   
     - Create CategoryMealScreen. DONE
-    - Create Navigation between Categories and CategoriesMeal screens. DONE
-    - Create a Meal model. 
-    - Show the meals with help of ListViewBuilder. 
+    - Create Navigation between Categories and CategoriesMeal screens. DONE.
+    - Create a Meal model. DONE
+    - Show the meals with help of ListViewBuilder. DONE.
+    - Creating a new list with filtered meals by categories. DONE.
 
 # TODO:
     - Learn about multiprovider, I need to provide 2 data classes on the same level - Material App. DONE.
